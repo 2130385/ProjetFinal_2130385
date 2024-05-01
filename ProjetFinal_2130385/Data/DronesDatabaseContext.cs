@@ -18,12 +18,15 @@ namespace ProjetFinal_2130385.Data
         }
 
         public virtual DbSet<Adresse> Adresses { get; set; } = null!;
+        public virtual DbSet<Changelog> Changelogs { get; set; } = null!;
         public virtual DbSet<Client> Clients { get; set; } = null!;
         public virtual DbSet<Commande> Commandes { get; set; } = null!;
         public virtual DbSet<Courriel> Courriels { get; set; } = null!;
         public virtual DbSet<Drone> Drones { get; set; } = null!;
         public virtual DbSet<Magasin> Magasins { get; set; } = null!;
         public virtual DbSet<Modele> Modeles { get; set; } = null!;
+        public virtual DbSet<VwCommande> VwCommandes { get; set; } = null!;
+        public virtual DbSet<VwDrone> VwDrones { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,6 +41,11 @@ namespace ProjetFinal_2130385.Data
             modelBuilder.Entity<Adresse>(entity =>
             {
                 entity.Property(e => e.AdresseId).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<Changelog>(entity =>
+            {
+                entity.Property(e => e.InstalledOn).HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<Client>(entity =>
@@ -103,6 +111,16 @@ namespace ProjetFinal_2130385.Data
             modelBuilder.Entity<Modele>(entity =>
             {
                 entity.Property(e => e.ModeleId).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<VwCommande>(entity =>
+            {
+                entity.ToView("vw_Commandes", "Magasins");
+            });
+
+            modelBuilder.Entity<VwDrone>(entity =>
+            {
+                entity.ToView("vw_Drones", "Magasins");
             });
 
             OnModelCreatingPartial(modelBuilder);

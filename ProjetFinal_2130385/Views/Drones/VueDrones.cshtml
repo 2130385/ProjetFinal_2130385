@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ProjetFinal_2130385.Models.VwDrone>
+
+@{
+    ViewData["Title"] = "VueDrones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Vue Drones</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DroneId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomModele)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vitesse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSortie)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DroneId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumSerie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomModele)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vitesse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prix)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateSortie)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

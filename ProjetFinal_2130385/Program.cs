@@ -21,6 +21,13 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Drones}/{action=Index}/{id?}"
+        );
+});
 app.MapRazorPages();
 
 app.Run();
