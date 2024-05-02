@@ -10687,19 +10687,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\david\\.nuget\\packages\\": {}
+    "C:\\Users\\2130385\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\Desktop\\ProjetFinal_2130385\\ProjetFinal_2130385\\ProjetFinal_2130385.csproj",
+      "projectUniqueName": "C:\\Users\\2130385\\Desktop\\ProjetFinal_2130385\\ProjetFinal_2130385\\ProjetFinal_2130385.csproj",
       "projectName": "ProjetFinal_2130385",
-      "projectPath": "C:\\Users\\david\\Desktop\\ProjetFinal_2130385\\ProjetFinal_2130385\\ProjetFinal_2130385.csproj",
-      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\david\\Desktop\\ProjetFinal_2130385\\ProjetFinal_2130385\\obj\\",
+      "projectPath": "C:\\Users\\2130385\\Desktop\\ProjetFinal_2130385\\ProjetFinal_2130385\\ProjetFinal_2130385.csproj",
+      "packagesPath": "C:\\Users\\2130385\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\2130385\\Desktop\\ProjetFinal_2130385\\ProjetFinal_2130385\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\2130385\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10707,6 +10707,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.314\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10757,6 +10758,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.28, 6.0.28]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.28, 6.0.28]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.28, 6.0.28]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.28, 6.0.28]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -10765,7 +10784,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.314\\RuntimeIdentifierGraph.json"
       }
     }
   }

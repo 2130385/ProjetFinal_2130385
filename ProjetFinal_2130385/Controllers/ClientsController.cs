@@ -23,7 +23,7 @@ namespace ProjetFinal_2130385.Controllers
         // GET: Clients
         public async Task<IActionResult> Index()
         {
-            await ChiffrementNomFamilleClients();
+            //await ChiffrementNomFamilleClients();
             var dronesDatabaseContext = _context.Clients.Include(c => c.Adresse);
             return View(await dronesDatabaseContext.ToListAsync());
         }
@@ -35,7 +35,7 @@ namespace ProjetFinal_2130385.Controllers
             {
                 return NotFound();
             }
-            await DechiffrementNomFamilleClient(id);
+            //await DechiffrementNomFamilleClient(id);
             var client = await _context.Clients
                 .Include(c => c.Adresse)
                 .FirstOrDefaultAsync(m => m.ClientId == id);
@@ -173,7 +173,7 @@ namespace ProjetFinal_2130385.Controllers
             try
             {
                 await _context.Database.ExecuteSqlRawAsync(query);
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {
@@ -188,7 +188,7 @@ namespace ProjetFinal_2130385.Controllers
             try
             {
                 await _context.Database.ExecuteSqlRawAsync(query);
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {
@@ -204,7 +204,7 @@ namespace ProjetFinal_2130385.Controllers
             try
             {
                 await _context.Database.ExecuteSqlRawAsync(query, parameters);
-                return RedirectToAction("Details", id);
+                return RedirectToAction("Details", new { id = id });
             }
             catch (Exception)
             {
@@ -220,7 +220,7 @@ namespace ProjetFinal_2130385.Controllers
             try
             {
                 await _context.Database.ExecuteSqlRawAsync(query, parameters);
-                return RedirectToAction("Details", id);
+                return RedirectToAction("Details", new { id = id });
             }
             catch (Exception)
             {
