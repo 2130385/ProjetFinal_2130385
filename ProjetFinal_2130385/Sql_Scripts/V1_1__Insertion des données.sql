@@ -66,14 +66,12 @@ VALUES
 GO
 
 -- Insérer des enregistrements dans la table Client
-INSERT INTO Clients.Client (ClientID, AdresseID, Prenom, NomFamille, NoTel1, NoTel2, DateNaissance)
-VALUES 
-    (1, 11, 'Jean', 'Dupont', '123-456-7890', NULL, '1990-05-15'),
-    (2, 12, 'Marie', 'Tremblay', '234-567-8901', '345-678-9012', '1985-10-20'),
-    (3, 13, 'Pierre', 'Leblanc', '345-678-9012', NULL, '1980-03-25'),
-    (4, 14, 'Julie', 'Lamontagne', '456-789-0123', NULL, '1975-08-30'),
-    (5, 15, 'Luc', 'Bouchard', '567-890-1234', '678-901-2345', '1970-01-05');
-GO
+
+EXEC Clients.usp_AjoutClient 1, 11, 'Jean', 'Dupont', '123-456-7890', NULL, '1990-05-15'
+EXEC Clients.usp_AjoutClient 2, 12, 'Marie', 'Tremblay', '234-567-8901', '345-678-9012', '1985-10-20'
+EXEC Clients.usp_AjoutClient 3, 13, 'Pierre', 'Leblanc', '345-678-9012', NULL, '1980-03-25'
+EXEC Clients.usp_AjoutClient 4, 14, 'Julie', 'Lamontagne', '456-789-0123', NULL, '1975-08-30'
+EXEC Clients.usp_AjoutClient 5, 15, 'Luc', 'Bouchard', '567-890-1234', '678-901-2345', '1970-01-05'
 
 -- Insérer des enregistrements dans la table Courriel
 INSERT INTO Clients.Courriel (CourrielID, ClientID, courriel)

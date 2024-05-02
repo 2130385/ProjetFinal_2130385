@@ -1,0 +1,64 @@
+﻿@model ProjetFinal_2130385.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomFamille)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomFamille) |
+            <form asp-controller="Clients" asp-action="ChiffrementNomFamilleClient" method="post">
+                <input type="hidden" name="id" value="@Model.ClientId" />
+                <button type="submit">Chiffrer le nom de famille</button>
+            </form>
+            <form asp-controller="Clients" asp-action="DechiffrementNomFamilleClient" method="post">
+                <input type="hidden" name="id" value="@Model.ClientId" />
+                <button type="submit">Déchiffrer le nom de famille</button>
+            </form> 
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NoTel1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoTel1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NoTel2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoTel2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateNaissance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateNaissance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Adresse.AdresseId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ClientId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

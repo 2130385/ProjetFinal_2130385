@@ -21,10 +21,8 @@ namespace ProjetFinal_2130385.Models
         [Column("AdresseID")]
         public int? AdresseId { get; set; }
         [StringLength(50)]
-        [Unicode(false)]
         public string? Prenom { get; set; }
         [StringLength(50)]
-        [Unicode(false)]
         public string? NomFamille { get; set; }
         [StringLength(20)]
         [Unicode(false)]

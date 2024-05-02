@@ -1,2 +1,0 @@
-USE DronesDatabase
-GO

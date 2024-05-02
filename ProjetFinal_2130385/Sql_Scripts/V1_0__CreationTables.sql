@@ -27,8 +27,8 @@ GO
 CREATE TABLE Clients.Client (
     ClientID INT PRIMARY KEY,
     AdresseID INT FOREIGN KEY REFERENCES Adresse(AdresseID),
-    Prenom VARCHAR(50),
-    NomFamille VARCHAR(50),
+    Prenom NVARCHAR(50),
+    NomFamille NVARCHAR(50),
     NoTel1 VARCHAR(20),
     NoTel2 VARCHAR(20) NULL,
     DateNaissance DATE

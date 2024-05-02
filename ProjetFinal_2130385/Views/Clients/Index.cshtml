@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ProjetFinal_2130385.Models.Client>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+<form>
+<button asp-controller="Clients" asp-action="ChiffrementNomFamilleClients">Chiffrer les noms de famille des clients</button>
+<button asp-controller="Clients" asp-action="DechiffrementNomFamilleClients">Déchiffrer les noms de famille des clients</button>
+</form>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomFamille)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoTel1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoTel2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateNaissance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresse)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomFamille)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoTel1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoTel2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateNaissance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresse.AdresseId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClientId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ClientId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClientId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
