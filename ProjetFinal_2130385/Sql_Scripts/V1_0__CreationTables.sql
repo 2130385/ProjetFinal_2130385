@@ -81,4 +81,25 @@ CREATE TABLE Magasins.Commande (
     DateCommande DATE,
     Montant DECIMAL(10,2)
 );
+
+
+---- Création de la table Image
+CREATE TABLE [Magasins].[Image] (
+    ImageID INT IDENTITY(1,1),
+    Nom NVARCHAR(100) NOT NULL,
+    Identifiant UNIQUEIDENTIFIER NOT NULL ROWGUIDCOL,
+    CONSTRAINT PK_Image_Image_ID PRIMARY KEY (ImageID)
+);
+GO
+
+ALTER TABLE [Magasins].[Image] ADD CONSTRAINT UC_Image_Identifiant
+UNIQUE (Identifiant);
+GO
+
+ALTER TABLE [Magasins].[Image] ADD CONSTRAINT DF_Image_Identifiant
+DEFAULT newid() FOR Identifiant;
+GO
+
+ALTER TABLE [Magasins].[Image] ADD
+FichierImage VARBINARY(max) FILESTREAM NULL;
 GO

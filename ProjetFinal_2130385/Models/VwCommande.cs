@@ -12,7 +12,6 @@ namespace ProjetFinal_2130385.Models
         [Column("CommandeID")]
         public int CommandeId { get; set; }
         [StringLength(102)]
-        [Unicode(false)]
         public string? NomClient { get; set; }
         [Column("courriel")]
         [StringLength(100)]

@@ -18,11 +18,11 @@ namespace ProjetFinal_2130385.Data
         }
 
         public virtual DbSet<Adresse> Adresses { get; set; } = null!;
-        public virtual DbSet<Changelog> Changelogs { get; set; } = null!;
         public virtual DbSet<Client> Clients { get; set; } = null!;
         public virtual DbSet<Commande> Commandes { get; set; } = null!;
         public virtual DbSet<Courriel> Courriels { get; set; } = null!;
         public virtual DbSet<Drone> Drones { get; set; } = null!;
+        public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<Magasin> Magasins { get; set; } = null!;
         public virtual DbSet<Modele> Modeles { get; set; } = null!;
         public virtual DbSet<VwCommande> VwCommandes { get; set; } = null!;
@@ -43,11 +43,6 @@ namespace ProjetFinal_2130385.Data
                 entity.Property(e => e.AdresseId).ValueGeneratedNever();
             });
 
-            modelBuilder.Entity<Changelog>(entity =>
-            {
-                entity.Property(e => e.InstalledOn).HasDefaultValueSql("(getdate())");
-            });
-
             modelBuilder.Entity<Client>(entity =>
             {
                 entity.Property(e => e.ClientId).ValueGeneratedNever();
@@ -55,7 +50,7 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Adresse)
                     .WithMany(p => p.Clients)
                     .HasForeignKey(d => d.AdresseId)
-                    .HasConstraintName("FK__Client__AdresseI__267ABA7A");
+                    .HasConstraintName("FK__Client__AdresseI__38996AB5");
             });
 
             modelBuilder.Entity<Commande>(entity =>
@@ -65,17 +60,17 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Client)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.ClientId)
-                    .HasConstraintName("FK__Commande__Client__33D4B598");
+                    .HasConstraintName("FK__Commande__Client__45F365D3");
 
                 entity.HasOne(d => d.Drone)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.DroneId)
-                    .HasConstraintName("FK__Commande__DroneI__34C8D9D1");
+                    .HasConstraintName("FK__Commande__DroneI__46E78A0C");
 
                 entity.HasOne(d => d.Magasin)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.MagasinId)
-                    .HasConstraintName("FK__Commande__Magasi__35BCFE0A");
+                    .HasConstraintName("FK__Commande__Magasi__47DBAE45");
             });
 
             modelBuilder.Entity<Courriel>(entity =>
@@ -85,7 +80,7 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Client)
                     .WithMany(p => p.Courriels)
                     .HasForeignKey(d => d.ClientId)
-                    .HasConstraintName("FK__Courriel__Client__29572725");
+                    .HasConstraintName("FK__Courriel__Client__3B75D760");
             });
 
             modelBuilder.Entity<Drone>(entity =>
@@ -95,7 +90,12 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Modele)
                     .WithMany(p => p.Drones)
                     .HasForeignKey(d => d.ModeleId)
-                    .HasConstraintName("FK__Drone__ModeleID__30F848ED");
+                    .HasConstraintName("FK__Drone__ModeleID__4316F928");
+            });
+
+            modelBuilder.Entity<Image>(entity =>
+            {
+                entity.Property(e => e.Identifiant).HasDefaultValueSql("(newid())");
             });
 
             modelBuilder.Entity<Magasin>(entity =>
@@ -105,7 +105,7 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Adresse)
                     .WithMany(p => p.Magasins)
                     .HasForeignKey(d => d.AdresseId)
-                    .HasConstraintName("FK__Magasin__Adresse__2E1BDC42");
+                    .HasConstraintName("FK__Magasin__Adresse__403A8C7D");
             });
 
             modelBuilder.Entity<Modele>(entity =>
