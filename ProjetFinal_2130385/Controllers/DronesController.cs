@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ProjetFinal_2130385.Data;
 using ProjetFinal_2130385.Models;
@@ -26,11 +28,51 @@ namespace ProjetFinal_2130385.Controllers
             return View(await dronesDatabaseContext.ToListAsync());
         }
 
-        // GET: Drones
+        // GET: VueDrones
         public async Task<IActionResult> VueDrones()
         {
             return View(await _context.VwDrones.ToListAsync());
         }
+
+        // GET: RevenusModeles
+        public async Task<IActionResult> RevenusModeles()
+        {
+            return View(await _context.Modeles.ToListAsync());
+        }
+
+        // GET: RevenusPourUnModele
+        public async Task<IActionResult> RevenusPourUnModele(int id)
+        {
+            try
+            {
+                string query = "EXEC Magasins.usp_RevenusPourUnModele @ModeleID, @Revenu OUTPUT";
+
+                var parameters = new[]
+                {
+            new SqlParameter("@ModeleID", id),
+            new SqlParameter
+            {
+                ParameterName = "@Revenu",
+                SqlDbType = SqlDbType.Decimal,
+                Precision = 10,
+                Scale = 2,
+                Direction = ParameterDirection.Output
+            }
+        };
+
+                await _context.Database.ExecuteSqlRawAsync(query, parameters);
+
+                decimal revenu = (decimal)parameters[1].Value;
+
+                return View(revenu);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "Une erreur est survenue. Veuillez réessayer.");
+                return View(null);
+            }
+        }
+
 
         // GET: Drones/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -161,14 +203,14 @@ namespace ProjetFinal_2130385.Controllers
             {
                 _context.Drones.Remove(drone);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DroneExists(int id)
         {
-          return (_context.Drones?.Any(e => e.DroneId == id)).GetValueOrDefault();
+            return (_context.Drones?.Any(e => e.DroneId == id)).GetValueOrDefault();
         }
     }
 }

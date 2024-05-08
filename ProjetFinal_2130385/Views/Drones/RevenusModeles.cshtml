@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProjetFinal_2130385.Models.Modele>
+@{
+    ViewData["Title"] = "RevenusModeles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modèles</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ModeleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vitesse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSortie)
+            </th>
+            <th>
+                Afficher les revenus pour ce modèle
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModeleId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vitesse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prix)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateSortie)
+                </td>
+                <td>
+                    <form method="post" action="@Url.Action("RevenusPourUnModele", "Drones")">
+                        <input type="hidden" name="id" value="@item.ModeleId" />
+                        <button type="submit">EXEC V_1.4</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
