@@ -9,6 +9,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ProjetFinal_2130385.Data;
 using ProjetFinal_2130385.Models;
+using ProjetFinal_2130385.ViewModels;
 
 namespace ProjetFinal_2130385.Controllers
 {
@@ -71,6 +72,36 @@ namespace ProjetFinal_2130385.Controllers
                 ModelState.AddModelError("", "Une erreur est survenue. Veuillez réessayer.");
                 return View(null);
             }
+        }
+
+        public async Task<IActionResult> ImagesModeles()
+        {
+            return View(await _context.Modeles.ToListAsync());
+        }
+
+        public async Task<IActionResult> ImagePourUnModele(int? id)
+        {
+            Modele? modele = await _context.Modeles.Where(x => x.ModeleId == id).FirstOrDefaultAsync();
+            return View(modele);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AjoutImageAuModele(int? id)
+        {
+            if(id == null || _context.Modeles == null)
+            {
+                return NotFound();
+            }
+            Modele? modele = await _context.Modeles.Where(x => x.ModeleId == id).FirstOrDefaultAsync();
+            if(modele == null)
+            {
+                return NotFound();
+            }
+            ImageUploadVM imgVM = new ImageUploadVM();
+            imgVM.NomModele = modele.Nom;
+            imgVM.FormFile = null;
+            return View(imgVM);
         }
 
 

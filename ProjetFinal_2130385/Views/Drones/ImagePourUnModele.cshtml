@@ -1,0 +1,15 @@
+﻿@model ProjetFinal_2130385.Models.Modele
+
+@{
+    ViewData["Title"] = "RevenusPourUnModele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Résultat de la procédure :</h1>
+<div>
+    <p>Les revenus pour ce modèle s'élèvent à : @Model $</p>
+    <form method="post" action="@Url.Action("RevenusPourUnModele", "Drones")">
+        <input type="hidden" name="id" @*value="@item.ModeleId"*@ />
+        <button type="submit">EXEC V_1.4</button>
+    </form>
+</div>
