@@ -52,28 +52,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJvbmVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Drones/ImagePourUnModele.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJvbmVzXEltYWdlUG91clVuTW9kZWxlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Drones/ImagesModeles.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJvbmVzXEltYWdlc01vZGVsZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Drones/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJvbmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Drones/RevenusModeles.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJvbmVzXFJldmVudXNNb2RlbGVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Drones/RevenusPourUnModele.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJvbmVzXFJldmVudXNQb3VyVW5Nb2RlbGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Drones/VueDrones.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJvbmVzXFZ1ZURyb25lcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/AjoutImagePourUnModele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xBam91dEltYWdlUG91clVuTW9kZWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/DetailsModeleImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xEZXRhaWxzTW9kZWxlSW1hZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/RevenusModeles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xSZXZlbnVzTW9kZWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Modeles/RevenusPourUnModele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxlc1xSZXZlbnVzUG91clVuTW9kZWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Shared/_Layout.cshtml]

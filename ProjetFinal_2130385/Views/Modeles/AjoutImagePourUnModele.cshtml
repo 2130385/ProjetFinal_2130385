@@ -1,0 +1,30 @@
+﻿@model ProjetFinal_2130385.ViewModels.ImageUploadVM
+
+@{
+    ViewData["Title"] = "AjoutImagePourUnModele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ajouter une image pour le modèle @Model.NomModele</h1>
+
+<form asp-action="UploadImage" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class = "form-group">
+        <label asp-for="Image.Nom" class="control-label"></label>
+        <input asp-for="Image.Nom" class="form-control" />
+        <span asp-validation-for="Image.Nom" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="FormFile">Fichier image : </label>
+        <input id="FormFile" name="FormFile" type="file" accept="image/*" class="form-control-file" />
+        <span asp-validation-for="FormFile" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NomModele" class="control-label"></label>
+        <input asp-for="NomModele" class="form-control" readonly value="@Model.NomModele" />
+        <span asp-validation-for="NomModele" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="UploadImage" class="btn btn-primary" />
+    </div>
+</form>
