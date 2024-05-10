@@ -14,6 +14,7 @@ namespace ProjetFinal_2130385.Models
             Drones = new HashSet<Drone>();
         }
 
+
         [Key]
         [Column("ModeleID")]
         public int ModeleId { get; set; }
@@ -28,5 +29,8 @@ namespace ProjetFinal_2130385.Models
 
         [InverseProperty("Modele")]
         public virtual ICollection<Drone> Drones { get; set; }
+
+        [Column("ImageID")]
+        public int? ImageId { get; set; }
     }
 }

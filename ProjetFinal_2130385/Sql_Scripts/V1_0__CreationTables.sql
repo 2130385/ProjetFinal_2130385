@@ -53,7 +53,8 @@ CREATE TABLE Magasins.Modele (
     Nom VARCHAR(100),
     Vitesse INT,
     Prix DECIMAL(10,2),
-    DateSortie DATE
+    DateSortie DATE,
+    ImageID INT,
 );
 GO
 

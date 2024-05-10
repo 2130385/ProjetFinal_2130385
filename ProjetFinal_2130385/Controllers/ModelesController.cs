@@ -61,22 +61,27 @@ namespace ProjetFinal_2130385.Controllers
             }
         }
 
-        //public async Task<IActionResult> DetailsModeleImage(int? id)
-        //{
-        //    if (id == null || _context.Modeles == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var modele = await _context.Modeles.FirstOrDefaultAsync(x => x.ModeleId == id);
-        //    if (modele == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    DetailsModeleImageVM detailVM = new DetailsModeleImageVM();
-        //    detailVM.NomModele = modele.Nom;
-        //    detailVM.ImageModele = modele.Image;
-        //    return View(detailVM);
-        //}
+        public async Task<IActionResult> DetailsModeleImage(int? id)
+        {
+            if (id == null || _context.Modeles == null)
+            {
+                return NotFound();
+            }
+            var modele = await _context.Modeles.FirstOrDefaultAsync(x => x.ModeleId == id);
+            if (modele == null)
+            {
+                return NotFound();
+            }
+            DetailsModeleImageVM detailVM = new DetailsModeleImageVM();
+            detailVM.NomModele = modele.Nom;
+            if (modele.ImageId != null)
+            {
+                var image = await _context.Images.FirstOrDefaultAsync(x => x.ImageId == modele.ImageId);
+                detailVM.ImageModele = image;
+                detailVM.ImageUrl = image.FichierImage == null ? null : $"data:image/png;base64,{Convert.ToBase64String(image.FichierImage)}";
+            }
+            return View(detailVM);
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -84,7 +89,7 @@ namespace ProjetFinal_2130385.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(imgVM.FormFile !=null && imgVM.FormFile.Length>= 0)
+                if (imgVM.FormFile != null && imgVM.FormFile.Length >= 0)
                 {
                     MemoryStream stream = new MemoryStream();
                     await imgVM.FormFile.CopyToAsync(stream);
@@ -92,8 +97,10 @@ namespace ProjetFinal_2130385.Controllers
                     imgVM.Image.FichierImage = fichierImage;
                 }
                 _context.Add(imgVM.Image);
+                await _context.SaveChangesAsync();
                 var modele = await _context.Modeles.FirstOrDefaultAsync(x => x.Nom == imgVM.NomModele);
-                //modele.Image= imgVM.Image;
+                var image = await _context.Images.FirstOrDefaultAsync(x => x.Nom == imgVM.Image.Nom);
+                modele.ImageId = image.ImageId;
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -112,9 +119,9 @@ namespace ProjetFinal_2130385.Controllers
         // GET: Modeles
         public async Task<IActionResult> Index()
         {
-              return _context.Modeles != null ? 
-                          View(await _context.Modeles.ToListAsync()) :
-                          Problem("Entity set 'DronesDatabaseContext.Modeles'  is null.");
+            return _context.Modeles != null ?
+                        View(await _context.Modeles.ToListAsync()) :
+                        Problem("Entity set 'DronesDatabaseContext.Modeles'  is null.");
         }
 
         // GET: Modeles/Details/5
@@ -240,14 +247,14 @@ namespace ProjetFinal_2130385.Controllers
             {
                 _context.Modeles.Remove(modele);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ModeleExists(int id)
         {
-          return (_context.Modeles?.Any(e => e.ModeleId == id)).GetValueOrDefault();
+            return (_context.Modeles?.Any(e => e.ModeleId == id)).GetValueOrDefault();
         }
     }
 }

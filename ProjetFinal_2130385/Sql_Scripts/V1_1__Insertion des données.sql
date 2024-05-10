@@ -26,13 +26,13 @@ VALUES
 GO
 
 -- Insérer des enregistrements dans la table Modele
-INSERT INTO Magasins.Modele (ModeleID, Nom, Vitesse, Prix, DateSortie)
+INSERT INTO Magasins.Modele (ModeleID, Nom, Vitesse, Prix, DateSortie, ImageID)
 VALUES 
-    (1, 'ModelA', 50, 1000.00, '2023-01-01'),
-    (2, 'ModelB', 60, 1200.00, '2023-02-01'),
-    (3, 'ModelC', 55, 1100.00, '2023-03-01'),
-    (4, 'ModelD', 65, 1300.00, '2023-04-01'),
-    (5, 'ModelE', 70, 1400.00, '2023-05-01');
+    (1, 'ModelA', 50, 1000.00, '2023-01-01', null),
+    (2, 'ModelB', 60, 1200.00, '2023-02-01', null),
+    (3, 'ModelC', 55, 1100.00, '2023-03-01', null),
+    (4, 'ModelD', 65, 1300.00, '2023-04-01', null),
+    (5, 'ModelE', 70, 1400.00, '2023-05-01', null);
 GO
 
 -- Insérer des enregistrements dans la table Magasin

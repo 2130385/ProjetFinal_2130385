@@ -5,5 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details Modele Image</h1>
-
+<h1>Details de l'image du modèle @Model.NomModele</h1>
+@{
+    if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img alt="@Model.NomModele" src="@Model.ImageUrl" width="400px" height="auto" />
+        <p>Nom de l'image : @Model.ImageModele.Nom</p>
+        <p>Id de l'image : @Model.ImageModele.ImageId</p>
+    }
+    else
+    {
+        <p>Aucune image pour ce modèle.</p>
+    }
+}
