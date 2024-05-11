@@ -1,2 +1,1 @@
-USE DronesDatabase
-GO
+--Géré par AdressesController

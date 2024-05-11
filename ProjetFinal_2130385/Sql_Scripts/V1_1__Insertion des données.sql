@@ -3,10 +3,10 @@ GO
 -- Insérer des enregistrements dans la table Adresse
 INSERT INTO Adresse (AdresseID, NoPorte, Rue, Ville, CodePostal, Province, Pays)
 VALUES 
-    (1, '123', 'Rue Principale', 'Montreal', 'H1A 1A1', 'Quebec', 'Canada'),
+    (1, '123', 'Rue Principale', 'Montréal', 'H1A 1A1', 'Québec', 'Canada'),
     (2, '456', 'Avenue Centrale', 'Toronto', 'M2N 2N2', 'Ontario', 'Canada'),
     (3, '789', 'Boulevard Secondaire', 'Vancouver', 'V6C 1A1', 'Colombie-Britannique', 'Canada'),
-    (4, '101', 'Rue de la Rivière', 'Québec', 'G1V 4M2', 'Quebec', 'Canada'),
+    (4, '101', 'Rue de la Rivière', 'Québec', 'G1V 4M2', 'Québec', 'Canada'),
     (5, '222', 'Place des Artistes', 'Ottawa', 'K1P 1J1', 'Ontario', 'Canada'),
     (6, '333', 'Chemin des Montagnes', 'Calgary', 'T2P 1A1', 'Alberta', 'Canada'),
     (7, '444', 'Rue du Commerce', 'Edmonton', 'T5J 1A1', 'Alberta', 'Canada'),

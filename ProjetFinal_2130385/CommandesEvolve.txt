@@ -4,5 +4,5 @@ Génération DbContext (création)
 Evolve
 	evolve migrate sqlserver -c "Server=.\SQLEXPRESS;Initial Catalog=DronesDatabase;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False" -s Clients -s Magasins --target-version 1.5
 
-Modification DbContext (update)
+Modification DbContext (update scaffold)
 	dotnet ef dbcontext scaffold Name=DronesDatabase Microsoft.EntityFrameworkCore.SqlServer -o Models --context-dir  Data --data-annotations --force
