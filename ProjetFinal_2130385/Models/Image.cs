@@ -10,6 +10,11 @@ namespace ProjetFinal_2130385.Models
     [Index("Identifiant", Name = "UC_Image_Identifiant", IsUnique = true)]
     public partial class Image
     {
+        public Image()
+        {
+            Modeles = new HashSet<Modele>();
+        }
+
         [Key]
         [Column("ImageID")]
         public int ImageId { get; set; }
@@ -17,5 +22,8 @@ namespace ProjetFinal_2130385.Models
         public string Nom { get; set; } = null!;
         public Guid Identifiant { get; set; }
         public byte[]? FichierImage { get; set; }
+
+        [InverseProperty("Image")]
+        public virtual ICollection<Modele> Modeles { get; set; }
     }
 }

@@ -47,6 +47,27 @@ GO
 CREATE UNIQUE INDEX UX_Courriel_Email ON Clients.Courriel (courriel);
 GO
 
+---- Création de la table Image
+CREATE TABLE [Magasins].[Image] (
+    ImageID INT IDENTITY(1,1),
+    Nom NVARCHAR(100) NOT NULL,
+    Identifiant UNIQUEIDENTIFIER NOT NULL ROWGUIDCOL,
+    CONSTRAINT PK_Image_Image_ID PRIMARY KEY (ImageID)
+);
+GO
+
+ALTER TABLE [Magasins].[Image] ADD CONSTRAINT UC_Image_Identifiant
+UNIQUE (Identifiant);
+GO
+
+ALTER TABLE [Magasins].[Image] ADD CONSTRAINT DF_Image_Identifiant
+DEFAULT newid() FOR Identifiant;
+GO
+
+ALTER TABLE [Magasins].[Image] ADD
+FichierImage VARBINARY(max) FILESTREAM NULL;
+GO
+
 -- Création de la table Modele
 CREATE TABLE Magasins.Modele (
     ModeleID INT PRIMARY KEY,
@@ -55,6 +76,7 @@ CREATE TABLE Magasins.Modele (
     Prix DECIMAL(10,2),
     DateSortie DATE,
     ImageID INT,
+    CONSTRAINT FK_Modele_Image FOREIGN KEY (ImageID) REFERENCES [Magasins].[Image](ImageID)
 );
 GO
 
@@ -84,23 +106,3 @@ CREATE TABLE Magasins.Commande (
 );
 
 
----- Création de la table Image
-CREATE TABLE [Magasins].[Image] (
-    ImageID INT IDENTITY(1,1),
-    Nom NVARCHAR(100) NOT NULL,
-    Identifiant UNIQUEIDENTIFIER NOT NULL ROWGUIDCOL,
-    CONSTRAINT PK_Image_Image_ID PRIMARY KEY (ImageID)
-);
-GO
-
-ALTER TABLE [Magasins].[Image] ADD CONSTRAINT UC_Image_Identifiant
-UNIQUE (Identifiant);
-GO
-
-ALTER TABLE [Magasins].[Image] ADD CONSTRAINT DF_Image_Identifiant
-DEFAULT newid() FOR Identifiant;
-GO
-
-ALTER TABLE [Magasins].[Image] ADD
-FichierImage VARBINARY(max) FILESTREAM NULL;
-GO

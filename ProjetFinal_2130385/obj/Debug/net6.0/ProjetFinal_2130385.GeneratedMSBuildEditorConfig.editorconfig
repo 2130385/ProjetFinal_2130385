@@ -16,22 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\david\Desktop\ProjetFinal_2130385\ProjetFinal_2130385
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Adresses/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRyZXNzZXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Adresses/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRyZXNzZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Adresses/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRyZXNzZXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Adresses/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRyZXNzZXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/david/Desktop/ProjetFinal_2130385/ProjetFinal_2130385/Views/Adresses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRyZXNzZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -60,17 +60,17 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Client)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.ClientId)
-                    .HasConstraintName("FK__Commande__Client__45F365D3");
+                    .HasConstraintName("FK__Commande__Client__4AB81AF0");
 
                 entity.HasOne(d => d.Drone)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.DroneId)
-                    .HasConstraintName("FK__Commande__DroneI__46E78A0C");
+                    .HasConstraintName("FK__Commande__DroneI__4BAC3F29");
 
                 entity.HasOne(d => d.Magasin)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.MagasinId)
-                    .HasConstraintName("FK__Commande__Magasi__47DBAE45");
+                    .HasConstraintName("FK__Commande__Magasi__4CA06362");
             });
 
             modelBuilder.Entity<Courriel>(entity =>
@@ -90,7 +90,7 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Modele)
                     .WithMany(p => p.Drones)
                     .HasForeignKey(d => d.ModeleId)
-                    .HasConstraintName("FK__Drone__ModeleID__4316F928");
+                    .HasConstraintName("FK__Drone__ModeleID__47DBAE45");
             });
 
             modelBuilder.Entity<Image>(entity =>
@@ -105,12 +105,17 @@ namespace ProjetFinal_2130385.Data
                 entity.HasOne(d => d.Adresse)
                     .WithMany(p => p.Magasins)
                     .HasForeignKey(d => d.AdresseId)
-                    .HasConstraintName("FK__Magasin__Adresse__403A8C7D");
+                    .HasConstraintName("FK__Magasin__Adresse__44FF419A");
             });
 
             modelBuilder.Entity<Modele>(entity =>
             {
                 entity.Property(e => e.ModeleId).ValueGeneratedNever();
+
+                entity.HasOne(d => d.Image)
+                    .WithMany(p => p.Modeles)
+                    .HasForeignKey(d => d.ImageId)
+                    .HasConstraintName("FK_Modele_Image");
             });
 
             modelBuilder.Entity<VwCommande>(entity =>
