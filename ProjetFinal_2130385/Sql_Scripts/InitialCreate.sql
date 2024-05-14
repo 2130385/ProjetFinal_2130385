@@ -15,7 +15,7 @@ GO
 ALTER DATABASE DronesDatabase
 ADD FILE (
 	NAME = FG_Images2130385,
-	FILENAME = 'C:\Users\david\Desktop\ProjetFinal_2130385\ProjetFinal_2130385\FG_Images2130385'
+	FILENAME = 'C:\EspaceLabo\FG_Images2130385'
 )
 TO FILEGROUP FG_Images2130385
 GO
